@@ -22,7 +22,7 @@
 <meta property="og:url" content="angentle.github.io/2018/03/06/20180306003使用hexo搭建个人博客--简便教程/index.html">
 <meta property="og:site_name" content="Angentle">
 <meta property="og:description" content="前置环境配置本教程的前置环境是，在windows/mac中 安装  git环境 node环境  以及在github中配置好ssh相关部署（此部分省略） 快速搭建本地环境 在本地环境中新建一个文件夹，名为Hexo，存放位置以这个为例（E:\blog\Hexo） 在该文件夹下右击 git bash 1hexo init  此部分的cnpm是安装了淘宝镜像，若没有安装请使用npm命令替代。 当然你可以直">
-<meta property="og:updated_time" content="2018-03-06T05:45:06.923Z">
+<meta property="og:updated_time" content="2018-03-06T09:56:37.581Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用hexo搭建个人博客--简便教程 | Angentle">
 <meta name="twitter:description" content="前置环境配置本教程的前置环境是，在windows/mac中 安装  git环境 node环境  以及在github中配置好ssh相关部署（此部分省略） 快速搭建本地环境 在本地环境中新建一个文件夹，名为Hexo，存放位置以这个为例（E:\blog\Hexo） 在该文件夹下右击 git bash 1hexo init  此部分的cnpm是安装了淘宝镜像，若没有安装请使用npm命令替代。 当然你可以直">
@@ -233,7 +233,7 @@ classes that you can use:
 <p>在你的github网站上，创建一个项目<br>设置 repository name：（你的github名）.github.io 创建即可。</p>
 <p>创建好以后，打开_config.yml<br>更改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:angentle/angentle.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>repository可以是git也可以是https</p>
+<p>repository 放置的是你github上面博客的地址（可以是git也可以是https  ！注意冒号后面要有一个空格）</p>
 </blockquote>
 <p>来到（E:\blog\Hexo）<br>在该文件夹下右击 git bash<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></p>
 <p>运行时候发现报了个错！！！</p>
