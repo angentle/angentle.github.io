@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      排序算法之冒泡排序 | Angentle 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Angentle">
+    
+    
+
+    <meta name="description" content="该部分可在浏览器控制台上查看结果该示例为从小到大排序1234567891011121314Array.prototype.bubbleSort2=function()&amp;#123;var i,j,temp;for(i=0;i&amp;lt;this.length;i++)&amp;#123;for(j=0;j&amp;lt;this.length-i-1;j++)if(this[j]&amp;gt;this[j+1])&amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序算法之冒泡排序 | Angentle">
+<meta property="og:url" content="angentle.github.io/2018/03/13/201803013001-排序算法-冒泡排序/index.html">
+<meta property="og:site_name" content="Angentle">
+<meta property="og:description" content="该部分可在浏览器控制台上查看结果该示例为从小到大排序1234567891011121314Array.prototype.bubbleSort2=function()&amp;#123;var i,j,temp;for(i=0;i&amp;lt;this.length;i++)&amp;#123;for(j=0;j&amp;lt;this.length-i-1;j++)if(this[j]&amp;gt;this[j+1])&amp;#123;">
+<meta property="og:updated_time" content="2018-03-13T10:55:43.487Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="排序算法之冒泡排序 | Angentle">
+<meta name="twitter:description" content="该部分可在浏览器控制台上查看结果该示例为从小到大排序1234567891011121314Array.prototype.bubbleSort2=function()&amp;#123;var i,j,temp;for(i=0;i&amp;lt;this.length;i++)&amp;#123;for(j=0;j&amp;lt;this.length-i-1;j++)if(this[j]&amp;gt;this[j+1])&amp;#123;">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Angentle</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+          <a href="https://github.com/angentle" title="Huno on GitHub">
+          <!--<a href="https://github.com/someus" title="Huno on GitHub">-->
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+
+
+      <!--<li class="navigation__item">-->
+        <!--<a href="" title="">-->
+          <!--<i class='icon cs-icon-douban'></i>-->
+          <!--<span class="label">Douban</span>-->
+        <!--</a>-->
+      <!--</li>-->
+
+      <!--<li class="navigation__item">-->
+        <!--<a href="" title="">-->
+          <!--<i class='icon cs-icon-weibo'></i>-->
+          <!--<span class="label">Weibo</span>-->
+        <!--</a>-->
+      <!--</li>-->
+
+
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">排序算法之冒泡排序</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-03-13" class="post-meta__date date">2018-03-13</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>该部分可在浏览器控制台上查看结果<br>该示例为从小到大排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.bubbleSort2=function()&#123;</span><br><span class="line">var i,j,temp;</span><br><span class="line">for(i=0;i&lt;this.length;i++)&#123;</span><br><span class="line">for(j=0;j&lt;this.length-i-1;j++)</span><br><span class="line">if(this[j]&gt;this[j+1])&#123;</span><br><span class="line">temp=this[j];</span><br><span class="line">this[j]=this[j+1];</span><br><span class="line">this[j+1]=temp;</span><br><span class="line">&#125;</span><br><span class="line">return this;</span><br><span class="line">&#125;&#125;</span><br><span class="line">var num=[2,1,4,5,3,6];</span><br><span class="line"></span><br><span class="line">num.bubbleSort2();</span><br></pre></td></tr></table></figure></p>
+<p>由此，我们可以计算出冒泡排序算法—<br>其平均时间复杂度为O(n2) ，空间复杂度为 O(1)，是一种原地排序算法。</p>
+<p>输出的结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 4, 3, 5, 6]</span><br></pre></td></tr></table></figure></p>
+<p>若想变成降序排列的冒泡排序，则将<code>this[j]&gt;this[j+1]</code>,改为<code>this[j]&gt;this[j+1]</code></p>
+<table>
+<thead>
+<tr>
+<th>i</th>
+<th>j</th>
+<th>this[j]</th>
+<th>j+1</th>
+<th>this[j+1]</th>
+<th>this.length-i-1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>2【1】</td>
+<td>1</td>
+<td>1【2】</td>
+<td>5</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>0</td>
+<td>2</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>0</td>
+<td>3</td>
+<td>5【3】</td>
+<td>4</td>
+<td>3【5】</td>
+<td>5</td>
+</tr>
+<tr>
+<td>0</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>6</td>
+<td>5</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>4【3】</td>
+<td>3</td>
+<td>3【4】</td>
+<td>4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Origin:<br>2 1 4 5 3 6</p>
+<p>Process:<br>1 2 4 5 3 6<br>1 2 4 3 5 6<br>1 2 3 4 5 6</p>
+<p>较为复杂的题：<br>[22,34,3,32,82,55,89,50,37,5,64,35, 9,70]</p>
+<table>
+<thead>
+<tr>
+<th>i</th>
+<th>j</th>
+<th>this[j]</th>
+<th>j+1</th>
+<th>this[j+1]</th>
+<th>this.length-i-1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>22</td>
+<td>1</td>
+<td>34</td>
+<td>13</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>34【3】</td>
+<td>2</td>
+<td>3【34】</td>
+<td>13</td>
+</tr>
+<tr>
+<td>0</td>
+<td>2</td>
+<td>34【32】</td>
+<td>3</td>
+<td>32【34】</td>
+<td>13</td>
+</tr>
+<tr>
+<td>0</td>
+<td>3</td>
+<td>34</td>
+<td>4</td>
+<td>82</td>
+<td>13</td>
+</tr>
+<tr>
+<td>0</td>
+<td>4</td>
+<td>82【55】</td>
+<td>5</td>
+<td>55【82】</td>
+<td>13</td>
+</tr>
+<tr>
+<td>0</td>
+<td>5</td>
+<td>82</td>
+<td>6</td>
+<td>89</td>
+<td>13</td>
+</tr>
+<tr>
+<td>0</td>
+<td>6</td>
+<td>89【50】</td>
+<td>7</td>
+<td>50【89】</td>
+<td>13</td>
+</tr>
+<tr>
+<td>0</td>
+<td>7</td>
+<td>89【37】</td>
+<td>8</td>
+<td>37【89】</td>
+<td>13</td>
+</tr>
+<tr>
+<td>0</td>
+<td>8</td>
+<td>89【5】</td>
+<td>9</td>
+<td>5【89】</td>
+<td>13</td>
+</tr>
+<tr>
+<td>0</td>
+<td>9</td>
+<td>89【64】</td>
+<td>10</td>
+<td>64【89】</td>
+<td>13</td>
+</tr>
+<tr>
+<td>0</td>
+<td>10</td>
+<td>89【35】</td>
+<td>11</td>
+<td>35【89】</td>
+<td>13</td>
+</tr>
+<tr>
+<td>0</td>
+<td>11</td>
+<td>89【9】</td>
+<td>12</td>
+<td>9【89】</td>
+<td>13</td>
+</tr>
+<tr>
+<td>0</td>
+<td>12</td>
+<td>89【70】</td>
+<td>13</td>
+<td>70【89】</td>
+<td>13</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>22【3】</td>
+<td>1</td>
+<td>3【22】</td>
+<td>12</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>22</td>
+<td>2</td>
+<td>32</td>
+<td>12</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>32</td>
+<td>3</td>
+<td>34</td>
+<td>12</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>34</td>
+<td>4</td>
+<td>55</td>
+<td>12</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>55</td>
+<td>5</td>
+<td>82</td>
+<td>12</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>82【50】</td>
+<td>6</td>
+<td>50【82】</td>
+<td>12</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6</td>
+<td>82【37】</td>
+<td>7</td>
+<td>37【82】</td>
+<td>12</td>
+</tr>
+<tr>
+<td>1</td>
+<td>7</td>
+<td>82【5】</td>
+<td>8</td>
+<td>82【5】</td>
+<td>12</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8</td>
+<td>82【64】</td>
+<td>9</td>
+<td>64【82】</td>
+<td>12</td>
+</tr>
+<tr>
+<td>1</td>
+<td>9</td>
+<td>82【35】</td>
+<td>10</td>
+<td>35【82】</td>
+<td>12</td>
+</tr>
+<tr>
+<td>1</td>
+<td>10</td>
+<td>82【9】</td>
+<td>11</td>
+<td>9【82】</td>
+<td>12</td>
+</tr>
+<tr>
+<td>1</td>
+<td>11</td>
+<td>82【70】</td>
+<td>12</td>
+<td>70【82】</td>
+<td>12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>22</td>
+<td>11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>22</td>
+<td>2</td>
+<td>32</td>
+<td>11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>32</td>
+<td>3</td>
+<td>34</td>
+<td>11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>34</td>
+<td>4</td>
+<td>55</td>
+<td>11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>55【50】</td>
+<td>5</td>
+<td>50【55】</td>
+<td>11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>55【37】</td>
+<td>6</td>
+<td>37【55】</td>
+<td>11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6</td>
+<td>55【5】</td>
+<td>7</td>
+<td>5【55】</td>
+<td>11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7</td>
+<td>55</td>
+<td>8</td>
+<td>64</td>
+<td>11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8</td>
+<td>64【35】</td>
+<td>9</td>
+<td>35【64】</td>
+<td>11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9</td>
+<td>64【9】</td>
+<td>10</td>
+<td>9【64】</td>
+<td>11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>10</td>
+<td>64</td>
+<td>11</td>
+<td>70</td>
+<td>11</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>22</td>
+<td>10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>22</td>
+<td>2</td>
+<td>32</td>
+<td>10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>32</td>
+<td>3</td>
+<td>34</td>
+<td>10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>34</td>
+<td>4</td>
+<td>50</td>
+<td>10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>50【37】</td>
+<td>5</td>
+<td>37【50】</td>
+<td>10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>50【5】</td>
+<td>6</td>
+<td>5【50】</td>
+<td>10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6</td>
+<td>50</td>
+<td>7</td>
+<td>55</td>
+<td>10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7</td>
+<td>55【35】</td>
+<td>8</td>
+<td>35【55】</td>
+<td>10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>8</td>
+<td>55【9】</td>
+<td>9</td>
+<td>9【55】</td>
+<td>10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>9</td>
+<td>55</td>
+<td>10</td>
+<td>64</td>
+<td>10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>22</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>22</td>
+<td>2</td>
+<td>32</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>32</td>
+<td>3</td>
+<td>34</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>37【5】</td>
+<td>4</td>
+<td>5【37】</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>37</td>
+<td>5</td>
+<td>50</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>50【35】</td>
+<td>6</td>
+<td>35【50】</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+<td>50【9】</td>
+<td>7</td>
+<td>9【50】</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>7</td>
+<td>50</td>
+<td>8</td>
+<td>55</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>8</td>
+<td>55</td>
+<td>9</td>
+<td>64</td>
+<td>9</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>22</td>
+<td>8</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>22</td>
+<td>2</td>
+<td>32</td>
+<td>8</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>32</td>
+<td>3</td>
+<td>34</td>
+<td>8</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>34【5】</td>
+<td>4</td>
+<td>5【34】</td>
+<td>8</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4</td>
+<td>34</td>
+<td>5</td>
+<td>37</td>
+<td>8</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>37【35】</td>
+<td>6</td>
+<td>35【37】</td>
+<td>8</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>37【9】</td>
+<td>7</td>
+<td>9【37】</td>
+<td>8</td>
+</tr>
+<tr>
+<td>5</td>
+<td>7</td>
+<td>37</td>
+<td>8</td>
+<td>50</td>
+<td>8</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>22</td>
+<td>7</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>22</td>
+<td>2</td>
+<td>32</td>
+<td>7</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>32【5】</td>
+<td>3</td>
+<td>5【32】</td>
+<td>7</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3</td>
+<td>32</td>
+<td>4</td>
+<td>34</td>
+<td>7</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4</td>
+<td>34</td>
+<td>5</td>
+<td>35</td>
+<td>7</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5</td>
+<td>35【9】</td>
+<td>6</td>
+<td>9【35】</td>
+<td>7</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6</td>
+<td>35</td>
+<td>7</td>
+<td>37</td>
+<td>7</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>22</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1</td>
+<td>22【5】</td>
+<td>2</td>
+<td>5【22】</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2</td>
+<td>22</td>
+<td>3</td>
+<td>32</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>3</td>
+<td>32</td>
+<td>4</td>
+<td>34</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>4</td>
+<td>34【9】</td>
+<td>5</td>
+<td>9【34】</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>5</td>
+<td>34</td>
+<td>6</td>
+<td>35</td>
+<td>5</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1</td>
+<td>5</td>
+<td>2</td>
+<td>22</td>
+<td>5</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2</td>
+<td>22</td>
+<td>3</td>
+<td>32</td>
+<td>5</td>
+</tr>
+<tr>
+<td>8</td>
+<td>3</td>
+<td>32【9】</td>
+<td>4</td>
+<td>9【32】</td>
+<td>5</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4</td>
+<td>32</td>
+<td>5</td>
+<td>34</td>
+<td>5</td>
+</tr>
+<tr>
+<td>9</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>22</td>
+<td>4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>4</td>
+<td>22【9】</td>
+<td>5</td>
+<td>9【22】</td>
+<td>4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>4</td>
+<td>22</td>
+<td>5</td>
+<td>32</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Origin:<br>22 34 3 32 82 55 89 50 37 5 64 35 9 70</p>
+<p>Process:<br>22<strong> 3 34</strong> 32 82 55 89 50 37 5 64 35 9 70<br>22 3 <strong>32 34</strong> 82 55 89 50 37 5 64 35 9 70<br>22 3 32 34<strong> 55 82</strong> 89 50 37 5 64 35 9 70<br>22 3 32 34 55 82 <strong>50 89 </strong>37 5 64 35 9 70<br>22 3 32 34 55 82 50 <strong>37 89 </strong>5 64 35 9 70<br>22 3 32 34 55 82 50 37<strong> 5 89</strong> 64 35 9 70<br>22 3 32 34 55 82 50 37 5 <strong>64 89</strong> 35 9 70<br>22 3 32 34 55 82 50 37 5 64 <strong>35 89</strong> 9 70<br>22 3 32 34 55 82 50 37 5 64 35 <strong>9 89 </strong>70<br>22 3 32 34 55 82 50 37 5 64 35 9 <strong>70 89</strong></p>
+<p><strong>3 22</strong> 32 34 55 82 50 37 5 64 35 9 70 89<br>3 22 32 34 55 <strong>50 82</strong> 37 5 64 35 9 70 89<br>3 22 32 34 55 50 <strong>37 82 </strong>5 64 35 9 70 89<br>3 22 32 34 55 50 37<strong> 5 82</strong> 64 35 9 70 89<br>3 22 32 34 55 50 37 5<strong> 64 82</strong> 35 9 70 89<br>3 22 32 34 55 50 37 5 64<strong> 35 82</strong> 9 70 89<br>3 22 32 34 55 50 37 5 64 35 <strong>9 82</strong> 70 89<br>3 22 32 34 55 50 37 5 64 35 9 <strong>70 82</strong> 89</p>
+<p>3 22 32 34 <strong>50 55</strong> 37 5 64 35 9 70 82 89<br>3 22 32 34 50<strong> 37 55 </strong>5 64 35 9 70 82 89<br>3 22 32 34 50 37 <strong>5 55</strong> 64 35 9 70 82 89<br>3 22 32 34 50 37 5 55 <strong>35 64</strong> 9 70 82 89<br>3 22 32 34 50 37 5 55 35<strong> 9 64</strong> 70 82 89</p>
+<p>3 22 32 34<strong> 37 50</strong> 5 55 35 9 64 70 82 89<br>3 22 32 34 37<strong> 5 50</strong> 55 35 9 64 70 82 89<br>3 22 32 34 37 5 50 <strong>35 55</strong> 9 64 70 82 89<br>3 22 32 34 37 5 50 35 <strong>9 55</strong> 64 70 82 89</p>
+<p>3 22 32 34 <strong>5 37</strong> 50 35 9 55 64 70 82 89<br>3 22 32 34 5 37 <strong>35 50</strong> 9 55 64 70 82 89<br>3 22 32 34 5 37 35<strong> 9 50</strong> 55 64 70 82 89</p>
+<p>3 22 32<strong> 5 34</strong> 37 35 9 50 55 64 70 82 89<br>3 22 32 5 34 <strong>35 37</strong> 9 50 55 64 70 82 89<br>3 22 32 5 34 35<strong> 9 37</strong> 50 55 64 70 82 89</p>
+<p>3 22 <strong>5 32</strong> 34 35 9 37 50 55 64 70 82 89<br>3 22 5 32 34 <strong>9 35</strong> 37 50 55 64 70 82 89</p>
+<p>3 <strong>5 22</strong> 32 34 9 35 37 50 55 64 70 82 89<br>3 5 22 32<strong> 9 34</strong> 35 37 50 55 64 70 82 89</p>
+<p>3 5 22<strong> 9 32</strong> 34 35 37 50 55 64 70 82 89</p>
+<p>3 5 <strong>9 22</strong> 32 34 35 37 50 55 64 70 82 89</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018. | 由大饼 All Rights Reserved.</span>
+    <span class="footer__copyright">Powered by hexo </span>
+    <span class="footer__copyright"> 感谢七牛云提供的图片服务 </span>
+
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
